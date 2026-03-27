@@ -5,11 +5,16 @@
   "window.zoomLevel": -1,
   "workbench.iconTheme": "vscode-icons",
   "breadcrumbs.enabled": true,
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 16,
+  "workbench.editor.wrapTabs": true,
 
   // ── Editor ───────────────────────────────────────────────────────
   "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll": "explicit"
@@ -18,15 +23,61 @@
   "editor.inlineSuggest.enabled": true,
   "editor.linkedEditing": true,
   "editor.stickyScroll.enabled": true,
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "smooth",
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "off",
+  "editor.rulers": [80, 120],
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.detectIndentation": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
 
   // ── Files ────────────────────────────────────────────────────────
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/node_modules": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.pyc": true
+  },
+
+  // ── Search ───────────────────────────────────────────────────────
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/venv": true,
+    "**/.venv": true,
+    "**/coverage": true
+  },
+
+  // ── Terminal ─────────────────────────────────────────────────────
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
+
+  // ── Explorer ─────────────────────────────────────────────────────
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
 
   // ── Git ──────────────────────────────────────────────────────────
   "git.suggestSmartCommit": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
   "diffEditor.ignoreTrimWhitespace": false,
 
   // ── Keyboard ─────────────────────────────────────────────────────
@@ -53,12 +104,16 @@
     "editor.tabSize": 2
   },
 
-  // ── Language: JSON / JSONC ────────────────────────────────────────
+  // ── Language: JSON / JSONC / YAML ─────────────────────────────────
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
@@ -81,13 +136,28 @@
     "files.trimTrailingWhitespace": false
   },
 
+  // ── Language: Shell scripts ──────────────────────────────────────
+  "[shellscript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[dockerfile]": {
+    "editor.tabSize": 2
+  },
+  "[makefile]": {
+    "editor.insertSpaces": false
+  },
+
   // ── Language: Python (Ruff for linting + formatting) ─────────────
   "python.defaultInterpreterPath": "python3",
   "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.rulers": [88],
     "editor.codeActionsOnSave": {
       "source.organizeImports.ruff": "explicit",
       "source.fixAll.ruff": "explicit"
