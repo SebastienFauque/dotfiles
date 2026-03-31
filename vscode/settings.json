@@ -1,72 +1,189 @@
 {
-  "git.suggestSmartCommit": false,
-  "breadcrumbs.enabled": true,
+  // ── Window & UI ──────────────────────────────────────────────────
   "window.titleBarStyle": "native",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "keyboard.dispatch": "keyCode",
+  "window.zoomLevel": -1,
   "workbench.iconTheme": "vscode-icons",
-  // Global editor settings
+  "breadcrumbs.enabled": true,
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 16,
+  "workbench.editor.wrapTabs": true,
+
+  // ── Editor ───────────────────────────────────────────────────────
   "editor.bracketPairColorization.enabled": true,
-  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
   "editor.fontLigatures": true,
-  // Vim settings
-  "vim.vimrc.enable": true,
-  "vim.vimrc.path": "/Users/seb/.vim/.vimrc",
-  // Prettier settings
-  "prettier.singleQuote": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "editor.renderWhitespace": "all",
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "smooth",
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "off",
+  "editor.rulers": [80, 120],
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.detectIndentation": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  // ── Files ────────────────────────────────────────────────────────
   "files.autoSave": "onFocusChange",
-  // Language specific settings
-  "[jsonc]": {
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/node_modules": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.pyc": true
+  },
+
+  // ── Search ───────────────────────────────────────────────────────
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/venv": true,
+    "**/.venv": true,
+    "**/coverage": true
+  },
+
+  // ── Terminal ─────────────────────────────────────────────────────
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
+
+  // ── Explorer ─────────────────────────────────────────────────────
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+
+  // ── Git ──────────────────────────────────────────────────────────
+  "git.suggestSmartCommit": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  // ── Keyboard ─────────────────────────────────────────────────────
+  "keyboard.dispatch": "keyCode",
+
+  // ── Prettier (JS / TS / JSON / CSS / HTML / Markdown) ────────────
+  "prettier.singleQuote": true,
+
+  // ── Language: TypeScript / JavaScript ─────────────────────────────
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
   "[typescriptreact]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  // ── Language: JSON / JSONC / YAML ─────────────────────────────────
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  // ── Language: HTML / CSS / Markdown ──────────────────────────────
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.trimTrailingWhitespace": false
+  },
+
+  // ── Language: Shell scripts ──────────────────────────────────────
+  "[shellscript]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.insertSpaces": true
   },
-  // Python Settings
-  "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true,
-  "python.formatting.provider": "autopep8",
-  "editor.renderWhitespace": "all",
-  "editor.inlineSuggest.enabled": true,
+  "[dockerfile]": {
+    "editor.tabSize": 2
+  },
+  "[makefile]": {
+    "editor.insertSpaces": false
+  },
+
+  // ── Language: Python (Ruff for linting + formatting) ─────────────
   "python.defaultInterpreterPath": "python3",
-  "pythonIndent.keepHangingBracketOnLine": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
   "[python]": {
-    // "editor.defaultFormatter": "ms-python.black-formatter"
-    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
-    "editor.wordBasedSuggestions": false,
-    "editor.tabSize": 4
-    // "editor.formatOnType": true
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.rulers": [88],
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit",
+      "source.fixAll.ruff": "explicit"
+    }
   },
-  //Python Docstring
+
+  // ── Ruff ─────────────────────────────────────────────────────────
+  "ruff.nativeServer": "auto",
+
+  // ── Python Docstring ─────────────────────────────────────────────
   "autoDocstring.docstringFormat": "google",
   "autoDocstring.generateDocstringOnEnter": true,
-  //TurboConsoleLog
-  "turboConsoleLog.insertEmptyLineBeforeLogMessage": false,
-  "turboConsoleLog.insertEmptyLineAfterLogMessage": false,
-  "turboConsoleLog.logMessagePrefix": "🚀🚀",
-  // This section will control the function used: console.log(JS/ TS), or print(Python), restart vscode after changing.
-  "turboConsoleLog.logFunction": "console.log",
-  // "turboConsoleLog.logFunction": "print",
+  "pythonIndent.keepHangingBracketOnLine": true,
+
+  // ── Vim ──────────────────────────────────────────────────────────
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/Users/seb/.vim/.vimrc",
   "vim.handleKeys": {
     "<C-d>": true,
     "<C-s>": false,
     "<C-z>": false
   },
-  "window.zoomLevel": -1
+
+  // ── TurboConsoleLog ──────────────────────────────────────────────
+  "turboConsoleLog.insertEmptyLineBeforeLogMessage": false,
+  "turboConsoleLog.insertEmptyLineAfterLogMessage": false,
+  "turboConsoleLog.logMessagePrefix": "🚀🚀",
+  "turboConsoleLog.logFunction": "console.log"
 }
